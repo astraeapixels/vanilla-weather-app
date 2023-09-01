@@ -76,6 +76,23 @@ button:hover {
   list-style: none;
   font-size: 30px;
 }
+.dates {
+  text-align: left;
+  font-size: 37px;
+  padding: 10px auto;
+  border: 10px;
+}
+.col-2 {
+  text-align: center;
+}
+.weather-icon {
+  font-size: 60px;
+}
+.daily-temperature {
+  font-weight: 75%;
+  font-size: 30px;
+  opacity: 0.6;
+}
 .divider,
 #fahrenheit,
 #celsius {
@@ -84,6 +101,17 @@ button:hover {
 .second-section {
   list-style: none;
   text-align: right;
+  width: 1000px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+.third-section {
+  background: linear-gradient(to top, #1d1f4a 0%, #2e3168 75%);
+  color: white;
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+  padding: 35px;
   width: 1000px;
   display: block;
   margin: 0 auto;
