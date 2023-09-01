@@ -1,0 +1,98 @@
+body {
+  background-image: url(blue-sky.jpg);
+  opacity: 0.9;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center right;
+}
+section {
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+  padding: 50px;
+  width: 1000px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 25px;
+  background: linear-gradient(to top, #c4efff 0%, #89b8ed 75%);
+}
+
+form {
+  text-align: left;
+}
+input {
+  background: #89b8ed;
+}
+input::placeholder {
+  text-align: right;
+  font-size: smaller;
+  font-family: "Rubik", sans-serif;
+  background-color: #89b8ed;
+  color: white;
+}
+button {
+  background: transparent;
+  border: none;
+}
+button:hover {
+  color: white;
+}
+.container {
+  text-align: center;
+  margin-top: 60px;
+}
+.second-section {
+  list-style: none;
+  text-align: right;
+  width: 1000px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
+a {
+  color: #0a58ca;
+}
+a:hover {
+  color: #2e3168;
+}
+.default-location {
+  text-transform: capitalize;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+.main-temperature {
+  font-size: 135px;
+  font-weight: bold;
+}
+
+.row {
+  font-size: 45px;
+}
+.col-4 {
+  list-style: none;
+  font-size: 30px;
+}
+
+.divider,
+#celsius {
+  font-size: 55px;
+}
+#fahrenheit,
+#celsius:hover {
+  cursor: pointer;
+}
+#main-icon {
+  text-align: center;
+  font-size: 70px;
+}
+#wind {
+  text-transform: capitalize;
+}
+#date-update {
+  font-family: "Rubik", sans-serif;
+  font: 55px;
+}
+#page-credit {
+  font-family: "Rubik", sans-serif;
+}
