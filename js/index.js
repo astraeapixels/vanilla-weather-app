@@ -117,6 +117,9 @@ function celsiusConverter(event) {
   let celsiusTemperature = (fahrenheitTemperature - 32) * (5 / 9);
   let celsiusWind = windSpeed * 1.609344;
 
+  tempConversion.classList.add("active");
+  conversionBack.classList.remove("active");
+
   let showCelsiusTemp = document.querySelector("#temp-on-display");
   showCelsiusTemp.innerHTML = `${Math.round(celsiusTemperature)}`;
 
@@ -129,6 +132,10 @@ function celsiusConverter(event) {
 
 function fahrenheitConverter(event) {
   event.preventDefault();
+
+  conversionBack.classList.add("active");
+  tempConversion.classList.remove("active");
+
   let showFahrenheitTemp = document.querySelector("#temp-on-display");
   showFahrenheitTemp.innerHTML = Math.round(fahrenheitTemperature);
 

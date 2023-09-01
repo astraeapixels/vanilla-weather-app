@@ -48,12 +48,13 @@ button:hover {
   margin: 0 auto;
   border-radius: 25px;
 }
-
 a {
   color: #0a58ca;
 }
 a:hover {
   color: #2e3168;
+  text-decoration: underline;
+  cursor: pointer;
 }
 .default-location {
   text-transform: capitalize;
@@ -65,6 +66,16 @@ a:hover {
   font-size: 135px;
   font-weight: bold;
 }
+.active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+.active:hover {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
 
 .row {
   font-size: 45px;
@@ -75,13 +86,11 @@ a:hover {
 }
 
 .divider,
+#fahrenheit,
 #celsius {
   font-size: 55px;
 }
-#fahrenheit,
-#celsius:hover {
-  cursor: pointer;
-}
+
 #main-icon {
   text-align: center;
   font-size: 70px;
