@@ -15,7 +15,6 @@ section {
   border-radius: 25px;
   background: linear-gradient(to top, #c4efff 0%, #89b8ed 75%);
 }
-
 form {
   text-align: left;
 }
@@ -40,21 +39,15 @@ button:hover {
   text-align: center;
   margin-top: 60px;
 }
-.second-section {
-  list-style: none;
-  text-align: right;
-  width: 1000px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 25px;
-}
-a {
+.units {
   color: #0a58ca;
 }
-a:hover {
+.units:hover {
   color: #2e3168;
-  text-decoration: underline;
   cursor: pointer;
+}
+.divider {
+  color: black;
 }
 .default-location {
   text-transform: capitalize;
@@ -68,15 +61,14 @@ a:hover {
 }
 .active {
   color: black;
-  cursor: default;
+  cursor: none;
   text-decoration: none;
 }
 .active:hover {
   color: black;
-  cursor: default;
+  cursor: none;
   text-decoration: none;
 }
-
 .row {
   font-size: 45px;
 }
@@ -84,13 +76,19 @@ a:hover {
   list-style: none;
   font-size: 30px;
 }
-
 .divider,
 #fahrenheit,
 #celsius {
   font-size: 55px;
 }
-
+.second-section {
+  list-style: none;
+  text-align: right;
+  width: 1000px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 25px;
+}
 #main-icon {
   text-align: center;
   font-size: 70px;

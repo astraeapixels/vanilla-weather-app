@@ -117,8 +117,8 @@ function celsiusConverter(event) {
   let celsiusTemperature = (fahrenheitTemperature - 32) * (5 / 9);
   let celsiusWind = windSpeed * 1.609344;
 
-  tempConversion.classList.add("active");
-  conversionBack.classList.remove("active");
+  fahrenheitConversion.classList.remove("active");
+  celsiusConversion.classList.add("active");
 
   let showCelsiusTemp = document.querySelector("#temp-on-display");
   showCelsiusTemp.innerHTML = `${Math.round(celsiusTemperature)}`;
@@ -133,8 +133,8 @@ function celsiusConverter(event) {
 function fahrenheitConverter(event) {
   event.preventDefault();
 
-  conversionBack.classList.add("active");
-  tempConversion.classList.remove("active");
+  celsiusConversion.classList.remove("active");
+  fahrenheitConversion.classList.add("active");
 
   let showFahrenheitTemp = document.querySelector("#temp-on-display");
   showFahrenheitTemp.innerHTML = Math.round(fahrenheitTemperature);
@@ -146,11 +146,11 @@ function fahrenheitConverter(event) {
   celsiusspeedMetric.innerHTML = `m/h`;
 }
 
-let tempConversion = document.querySelector("#celsius");
-tempConversion.addEventListener("click", celsiusConverter);
+let celsiusConversion = document.querySelector("#celsius");
+celsiusConversion.addEventListener("click", celsiusConverter);
 
-let conversionBack = document.querySelector("#fahrenheit");
-conversionBack.addEventListener("click", fahrenheitConverter);
+let fahrenheitConversion = document.querySelector("#fahrenheit");
+fahrenheitConversion.addEventListener("click", fahrenheitConverter);
 
 function showPosition(position) {
   console.log(position);
