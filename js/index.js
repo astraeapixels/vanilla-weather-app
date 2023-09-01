@@ -101,7 +101,7 @@ function displayForecast() {
                                 <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="" id="icon-one">
                             </div>
                             <div class="daily-temperature">
-                                <span class="minimum">54°</span>/79°
+                                <span class="minimum">54°</span>/<span class="maximum">79°</span>
                             </div>
                         </div>`;
   });

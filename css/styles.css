@@ -120,6 +120,12 @@ button:hover {
 .day-of-week {
   font-size: 35px;
 }
+.minimum {
+  font-weight: bold;
+}
+.maximum {
+  font-weight: lighter;
+}
 #main-icon {
   text-align: center;
   font-size: 70px;
