@@ -87,6 +87,29 @@ function temperature(response) {
   showDate.innerHTML = `${dateElement}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+                            <div class="day-of-week" id="day-one">${day}</div>
+                            <div class="weather-icon">
+                                <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="" id="icon-one">
+                            </div>
+                            <div class="daily-temperature">
+                                <span class="minimum">54°</span>/79°
+                            </div>
+                        </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function searchCity(city) {
   let apiKey = `2a9813540ff06c7d508ac5d7caf18400`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
@@ -176,3 +199,4 @@ let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentPosition);
 
 searchCity(`Los Angeles`);
+displayForecast();
