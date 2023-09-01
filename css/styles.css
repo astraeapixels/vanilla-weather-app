@@ -35,16 +35,16 @@ button {
 button:hover {
   color: white;
 }
+a {
+  color: #35458c;
+}
+a:hover {
+  color: #4392db;
+  cursor: pointer;
+}
 .container {
   text-align: center;
   margin-top: 60px;
-}
-.units {
-  color: #0a58ca;
-}
-.units:hover {
-  color: #2e3168;
-  cursor: pointer;
 }
 .divider {
   color: black;
