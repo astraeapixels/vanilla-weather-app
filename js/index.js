@@ -82,6 +82,40 @@ function formatFullDate(timestamp) {
   return `${month} ${dateOfMonth}, ${year}`;
 }
 
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+                            <div class="day-of-week" id="day-one">${day}</div>
+                            <div class="weather-icon">
+                                <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="" id="icon-one">
+                            </div>
+                            <div class="daily-temperature">
+                                <span class="minimum">54°</span>/<span class="maximum">79°</span>
+                            </div>
+                        </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = `2a9813540ff06c7d508ac5d7caf18400`;
+  let latitude = coordinates.lat;
+  let longitude = coordinates.lon;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function temperature(response) {
   let city = response.data.name;
   let humidity = response.data.main.humidity;
@@ -121,29 +155,8 @@ function temperature(response) {
 
   let currentDate = document.querySelector("#date-of-month");
   currentDate.innerHTML = `${fullDateElement}`;
-}
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-  let days = ["Thu", "Fri", "Sat", "Sun"];
-
-  let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
-                            <div class="day-of-week" id="day-one">${day}</div>
-                            <div class="weather-icon">
-                                <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="" id="icon-one">
-                            </div>
-                            <div class="daily-temperature">
-                                <span class="minimum">54°</span>/<span class="maximum">79°</span>
-                            </div>
-                        </div>`;
-  });
-
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -235,4 +248,3 @@ let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentPosition);
 
 searchCity(`Los Angeles`);
-displayForecast();
