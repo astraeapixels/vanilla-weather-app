@@ -25,7 +25,7 @@ function formatDate(timestamp) {
 }
 
 function formatFullDate(timestamp) {
-  let now = new Date();
+  let now = new Date(timestamp);
 
   let months = [
     `January`,
