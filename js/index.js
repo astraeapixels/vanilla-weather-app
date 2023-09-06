@@ -96,8 +96,9 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
+
   forecast.forEach(function (forecastDay, index) {
-    if (index > 0 && index < 7) {
+    if (index > 1 && index < 8) {
       forecastHTML =
         forecastHTML +
         `<div class="col-2">
@@ -125,7 +126,6 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = `281450ec88936f4fa8ee9864682b49a0`;
   let latitude = coordinates.lat;
   let longitude = coordinates.lon;
@@ -142,9 +142,6 @@ function temperature(response) {
   let fullDateElement = formatFullDate(response.data.dt * 1000);
   fahrenheitTemperature = response.data.main.temp;
   windSpeed = response.data.wind.speed;
-
-  console.log(response);
-  console.log(response.data.wind);
 
   let showTemperature = document.querySelector("#temp-on-display");
   showTemperature.innerHTML = Math.round(fahrenheitTemperature);
@@ -243,8 +240,6 @@ let fahrenheitConversion = document.querySelector("#fahrenheit");
 fahrenheitConversion.addEventListener("click", fahrenheitConverter);
 
 function showPosition(position) {
-  console.log(position);
-
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
 
