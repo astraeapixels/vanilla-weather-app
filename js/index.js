@@ -182,8 +182,8 @@ function defaultWeather(response) {
   let currentDate = document.querySelector("#date-of-month");
   currentDate.innerHTML = `${fullDateElement}`;
 
-  let celsiusspeedMetric = document.querySelector("#speed-metric");
-  celsiusspeedMetric.innerHTML = `m/h`;
+  let celsiusSpeedMetric = document.querySelector("#speed-metric");
+  celsiusSpeedMetric.innerHTML = `m/h`;
 
   getForecast(response.data.coord);
 }
