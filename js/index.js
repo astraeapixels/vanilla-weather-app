@@ -241,7 +241,7 @@ function searchLocation(event) {
   if (city) {
     location.innerHTML = `${city}`;
   } else {
-    alert("type the name of a city");
+    alert("type the name of a city . . .");
   }
   searchCityDefault(city);
 }
