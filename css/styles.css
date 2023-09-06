@@ -140,3 +140,7 @@ a:hover {
 #page-credit {
   font-family: "Rubik", sans-serif;
 }
+
+#page-credit a {
+  text-decoration: none;
+}
