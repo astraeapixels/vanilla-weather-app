@@ -204,7 +204,6 @@ function showCelsiusWeather(response) {
   getForecastMetric(response.data.coord);
 }
 
-//default means fahrenheit/imperial unit
 function searchCity(city) {
   let apiKey = `2a9813540ff06c7d508ac5d7caf18400`;
   let unit = `imperial`;
