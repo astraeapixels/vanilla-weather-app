@@ -145,7 +145,7 @@ function getForecastMetric(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
-function defaultWeather(response) {
+function showWeather(response) {
   let city = response.data.name;
   let humidity = response.data.main.humidity;
   let description = response.data.weather[0].main;
@@ -188,7 +188,7 @@ function defaultWeather(response) {
   getForecast(response.data.coord);
 }
 
-function showCelciusWeather(response) {
+function showCelsiusWeather(response) {
   let celsiusTemperature = response.data.main.temp;
   let celsiusWind = response.data.wind.speed;
 
@@ -205,30 +205,30 @@ function showCelciusWeather(response) {
 }
 
 //default means fahrenheit/imperial unit
-function searchCityDefault(city) {
+function searchCity(city) {
   let apiKey = `2a9813540ff06c7d508ac5d7caf18400`;
   let unit = `imperial`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
 
-  axios.get(apiUrl).then(defaultWeather);
+  axios.get(apiUrl).then(showWeather);
 }
 
 function searchCityMetric() {
-  let location = document.querySelector("#location").textContent;
+  let location = document.querySelector("#location").innerHTML;
   let apiKey = `2a9813540ff06c7d508ac5d7caf18400`;
   let unit = `metric`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=${unit}`;
 
-  axios.get(apiUrl).then(showCelciusWeather);
+  axios.get(apiUrl).then(showCelsiusWeather);
 }
 
-function searchFahrenheitAgain() {
-  let location = document.querySelector("#location").textContent;
+function searchCityImperial() {
+  let location = document.querySelector("#location").innerHTML;
   let apiKey = `2a9813540ff06c7d508ac5d7caf18400`;
   let unit = `imperial`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=${unit}`;
 
-  axios.get(apiUrl).then(defaultWeather);
+  axios.get(apiUrl).then(showWeather);
 }
 
 function searchLocation(event) {
@@ -243,7 +243,7 @@ function searchLocation(event) {
   } else {
     alert("type the name of a city . . .");
   }
-  searchCityDefault(city);
+  searchCity(city);
 }
 
 let searchButton = document.querySelector("#search-button");
@@ -262,7 +262,7 @@ function activateFanhrenheit(event) {
   celsiusConversion.classList.remove("active");
   fahrenheitConversion.classList.add("active");
 
-  searchFahrenheitAgain();
+  searchCityImperial();
 }
 
 let celsiusConversion = document.querySelector("#celsius");
@@ -279,7 +279,7 @@ function showPosition(position) {
   let apiKey = `2a9813540ff06c7d508ac5d7caf18400`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
 
-  axios.get(apiUrl).then(defaultWeather);
+  axios.get(apiUrl).then(showWeather);
 }
 
 function getCurrentPosition(event) {
@@ -293,4 +293,4 @@ let windSpeed = null;
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentPosition);
 
-searchCityDefault(`Los Angeles`);
+searchCity(`Los Angeles`);
