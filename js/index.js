@@ -256,7 +256,7 @@ function activateCelsius(event) {
   searchCityMetric();
 }
 
-function activateFanhrenheit(event) {
+function activateFahrenheit(event) {
   event.preventDefault();
   celsiusConversion.classList.remove("active");
   fahrenheitConversion.classList.add("active");
@@ -268,7 +268,7 @@ let celsiusConversion = document.querySelector("#celsius");
 celsiusConversion.addEventListener("click", activateCelsius);
 
 let fahrenheitConversion = document.querySelector("#fahrenheit");
-fahrenheitConversion.addEventListener("click", activateFanhrenheit);
+fahrenheitConversion.addEventListener("click", activateFahrenheit);
 
 function showPosition(position) {
   let latitude = position.coords.latitude;
